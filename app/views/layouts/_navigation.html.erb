@@ -10,7 +10,7 @@
             <div class="menu">
               <a class="item">Sign Up</a>
               <a class="item">Login</a>
-              <a class="item">Logout</a>
+              <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class:"item" %>
             </div>
           </div>
           <div class="item">
