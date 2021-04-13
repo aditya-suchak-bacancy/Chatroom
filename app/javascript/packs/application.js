@@ -15,7 +15,8 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 require("semantic-ui-sass")
-require("scrollup")
+
+require("packs/scrollup.js");
 
 $(document).on('turbolinks:load', function(){
   $('.ui.dropdown').dropdown();
