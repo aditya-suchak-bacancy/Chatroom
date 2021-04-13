@@ -1,19 +1,21 @@
 <a class="active item">
           Chat Room
         </a>
-        <a class="item">
-          Messages
-        </a>
         <div class="right menu">
-          <div class="ui dropdown item">
-            Account <i class="dropdown icon"></i>
-            <div class="menu">
-              <a class="item">Sign Up</a>
-              <a class="item">Login</a>
-              <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class:"item" %>
-            </div>
-          </div>
-          <div class="item">
-              <div class="ui primary button">Sign Up</div>
-          </div>
+          <%  if user_signed_in? %>
+                <div class="ui dropdown item">
+                Accounts <i class="dropdown icon"></i>
+                <div class="menu">
+                    <%= link_to "Logout", destroy_user_session_path, :method => :delete, class:"item" %>
+                </div>
+              </div>
+          <% else %>
+                <div class="ui dropdown item">
+                      Accounts <i class="dropdown icon"></i>
+                      <div class="menu">
+                        <%= link_to "Login", new_user_session_path, class:"item" %>
+                        <%= link_to "Signup", new_user_registration_path, class:"item" %>
+                      </div>
+                  </div>
+          <% end %>
         </div>
